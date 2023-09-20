@@ -16,7 +16,8 @@ const int qtdH = 5;
 Habitante h[qtdH];
 double somaSa, somaFi, mediaSa, mediaFi, maiorSa, percMulher, qtdMulher = 0;
 
-void formataDecimal(){
+void formataDecimal()
+{
     cout.precision(3);
     cout << fixed;
 }
@@ -74,14 +75,16 @@ void calculaRelatorio()
     percMulher = qtdMulher * 100 / qtdH;
 }
 
-void MostraRelatorio(){
+void MostraRelatorio()
+{
     cout << "Média de Salário da população: R$ " << mediaSa << "\n";
     cout << "Média de números de filhos da população: " << mediaFi << "\n";
     cout << "Percentual de mulheres com salário acima de R$ 1000.00:  " << percMulher << "% \n";
     cout << "Maior Salário: R$ " << maiorSa << endl;
 }
 
-void MostrarRegistros(){
+void MostrarRegistros()
+{
     for (int i = 0; i < qtdH; i++)
     {
         cout << "\nRegistro " << i + 1 << "° \n";
@@ -163,7 +166,7 @@ int main()
         leitura.open("ListaDados.txt"); // Abre o arquivo em modo binario, ou cria se não existir
 
         if (leitura.fail())
-        {                    // Se falhar
+        { // Se falhar
             cout << "ERROR!";
             leitura.clear(); // Fecha
             return false;
@@ -179,6 +182,12 @@ int main()
         leitura.close(); // Fecha após carregado
         calculaRelatorio();
         MostraRelatorio();
+        escrita.open("Relatorio.txt");
+        escrita << "Média de Salário da população: R$ " << mediaSa << "\n";
+        escrita << "Média de números de filhos da população: " << mediaFi << "\n";
+        escrita << "Percentual de mulheres com salário abaixo de R$ 1000.00:  " << percMulher << "% \n";
+        escrita << "Maior Salário: R$ " << maiorSa << endl;
+        escrita.close();
     }
     return 0;
 }
