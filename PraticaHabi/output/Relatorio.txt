@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Média de Salário da população: R$ 3494
 Média de números de filhos da população: 1.8
 Percentual de mulheres com salário acima de R$ 1000.00:  60% 
 Maior Salário: R$ 9290
-=======
-Média de Salário da população: R$ 3712.4
-Média de números de filhos da população: 1.6
-Percentual de mulheres com salário abaixo de R$ 1000.00:  60% 
-Maior Salário: R$ 6500
->>>>>>> be3c857763627ca14d7a423b06262348f7ff5e5e
