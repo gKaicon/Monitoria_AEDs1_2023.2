@@ -90,7 +90,7 @@ void salvaDados()
 
 void carregaDados()
 {
-    leitura.open("ListaDados.txt"); // Abre o arquivo em modo binario, ou cria se não existir
+    leitura.open("ListaDados.txt");
     if (leitura.fail())
     { // Se falhar
         cout << "ERROR!";
