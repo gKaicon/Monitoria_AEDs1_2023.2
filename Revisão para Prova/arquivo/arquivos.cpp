@@ -31,17 +31,17 @@ int main()
        sem usar algo como o "cin >> num" no programa;
     */
     // escrita, se basea em abrir um arquivo, edita-lo, salva-lo e fecha-lo
-     escrita.open("teste.txt"); //abrir o arquivo
-     int num;
-     cout << "Digite um numero";
-     cin >> num;
-     //edição/armazenação(salvar)
-     escrita << num << endl;
-     escrita << "Joao" << endl;
-     escrita << "Gabriel" << endl;
-     escrita << "Brunna" << endl;
-     escrita << "Julya" << endl;
-     escrita.close(); //fechamento
+    escrita.open("teste.txt"); // abrir o arquivo
+    int num;
+    cout << "Digite um numero";
+    cin >> num;
+    // edição/armazenação(salvar)
+    escrita << num << endl;
+    escrita << "Joao" << endl;
+    escrita << "Gabriel" << endl;
+    escrita << "Brunna" << endl;
+    escrita << "Julya" << endl;
+    escrita.close(); // fechamento
 
     /*
        Usarei o ofstream para "tirar" do programa, e irei escrever no arquivo, logo uso "<<".
@@ -51,9 +51,9 @@ int main()
     */
     // leitura, se baseia em abrir um arquivo existente, lê-lo, e fecha-lo
     leitura.open("teste.txt"); // abro em forma de leitura
-    string palavra; // varivel que vai receber cada palavra do arquivo para exibi-la na tela
-    //leitura e exibição
-    cout << "\nPrimeira impresão, a forma extendida";
+    string palavra;            // varivel que vai receber cada palavra do arquivo para exibi-la na tela
+    // leitura e exibição
+    cout << "\nPrimeira impresão, a forma extendida\n";
     leitura >> palavra;
     cout << palavra << endl;
     leitura >> palavra;
@@ -64,9 +64,12 @@ int main()
     cout << palavra << endl;
     leitura >> palavra;
     cout << palavra << endl;
-    cout << "\nSegunda impresão, a forma resumida";
-    while ((leitura >> palavra))
+    cout << "\nSegunda impresão, a forma resumida\n";
+    do
+    {
+        leitura >> palavra;
         cout << palavra << endl;
+    } while (!leitura.eof());
     leitura.close(); // fechamento
 
     steady_clock::time_point tempofim = steady_clock::now();
