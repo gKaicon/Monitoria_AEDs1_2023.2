@@ -6,6 +6,15 @@
 using namespace std;
 using namespace chrono;
 
+
+
+
+void soma1(int a, int b, int soma){
+    soma = soma * 0;    
+    soma = a + b;
+    cout << soma;
+}
+
 string vemDoubleSaiString(double num); // cabeçalho da função
 //quero uma função que retorne uma string, com "condição" double
 
