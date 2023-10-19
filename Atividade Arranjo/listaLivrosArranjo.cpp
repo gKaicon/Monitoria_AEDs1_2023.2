@@ -45,6 +45,8 @@ Livro leDoTeclado();
 void importarArquivo();
 void exportarArquivo();
 
+void ExecutaTrocaElemento();
+
 int menu();
 
 int main()
@@ -96,32 +98,38 @@ int main()
             editarLivro(posicao);
             break;
         case 9:
-            mostrarLista();
-            int p1, p2;
-            cout << "Digite os livros que deseja trocar de posição: ";
-            cout << "\nPosição 1:";
-            cin >> p1;
-            cout << "\nPosição 2:";
-            cin >> p2;
-            trocaElemento(p1, p2);
+            ExecutaTrocaElemento();
             break;
         case 10:
             exportarArquivo();
         case 11:
             importarArquivo();
         case 0:
-            break;
+            cout << "Saindo...";
+            Sleep(3000);
+            exit(0);
         default:
             cout << "Nenhuma das opções digitadas é válida." << endl;
             break;
         }
         system("PAUSE");
     } while (opcao != 0);
-    cout << "Saindo..." << endl;
     steady_clock::time_point tempofim = steady_clock::now();
     duration<double> tempo = duration_cast<duration<double>>(tempofim - tempoinicio);
     cout << "\nTempo de Execução:" << tempo.count() << " segundos" << endl;
     return 0;
+}
+
+void ExecutaTrocaElemento()
+{
+    mostrarLista();
+    int p1, p2;
+    cout << "Digite os livros que deseja trocar de posição: ";
+    cout << "\nPosição 1:";
+    cin >> p1;
+    cout << "\nPosição 2:";
+    cin >> p2;
+    trocaElemento(p1, p2);
 }
 
 void inserirInicio(Livro li)
@@ -304,13 +312,16 @@ void importarArquivo()
 {
     ifstream leitura;
     leitura.open("listaLivros.txt");
-    if (leitura.fail()){
+    if (leitura.fail())
+    {
         cout << "Abertura do arquivo falhou.\n";
     }
-    else{
+    else
+    {
         leitura >> lista.quantidade;
-        for (int i = 0; i < lista.quantidade; i++){
-            leitura >> lista.livros[i].codigo;    
+        for (int i = 0; i < lista.quantidade; i++)
+        {
+            leitura >> lista.livros[i].codigo;
             getline(leitura >> ::ws, lista.livros[i].nome);
             getline(leitura >> ::ws, lista.livros[i].autor);
             leitura >> lista.livros[i].anoPublicacao;
@@ -320,17 +331,19 @@ void importarArquivo()
     }
 }
 
-void exportarArquivo(){
+void exportarArquivo()
+{
     ofstream escrita;
     escrita.open("listaLivros.txt");
     if (!escrita.is_open())
     { // verificação se o arquivo está aberto ou não, em modo de edição
-        cout << "Arquivo não aberto.\n" << endl;
+        cout << "Arquivo não aberto.\n"
+             << endl;
     }
     else
     {
         escrita.clear();
-        escrita << lista.quantidade << endl;//colocando a quantidade, para caso este seja o arquivo importado
+        escrita << lista.quantidade << endl; // colocando a quantidade, para caso este seja o arquivo importado
         for (int i = 0; i < lista.quantidade; i++)
         {
             escrita << lista.livros[i].codigo << endl;
