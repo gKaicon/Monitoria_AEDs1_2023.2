@@ -24,6 +24,7 @@ int main() {
     UINT CPAGE_DEFAULT = GetConsoleOutputCP();
     SetConsoleOutputCP(CPAGE_UTF8);
     srand(time(NULL));
+    cout << "Infinito: " << is_infinity;
     cout << vemDoubleSaiString(25);
     steady_clock::time_point tempofim = steady_clock::now();
     duration<double> tempo = duration_cast<duration<double>>(tempofim - tempoinicio);
