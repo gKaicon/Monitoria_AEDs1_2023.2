@@ -6,13 +6,13 @@
 using namespace std;
 using namespace chrono;
 
-int **criarMatriz(int linhas, int colunas)
+int criarMatriz(int linhas, int colunas)
 {
     int **matriz;
     matriz = new int *[linhas];
     for (int i = 0; i < colunas; i++)
         matriz[i] = new int[colunas];
-    return matriz;
+    return matriz[0][0];
 }
 
 int main()
@@ -23,7 +23,8 @@ int main()
     SetConsoleOutputCP(CPAGE_UTF8);
     srand(time(NULL));
 
-    int **matriz = criarMatriz(3, 2);
+    int **matriz;
+    matriz[0][0] = criarMatriz(3, 2);
     for (int i = 0; i < 3; i++)
     {
         // preenchimento da matriz

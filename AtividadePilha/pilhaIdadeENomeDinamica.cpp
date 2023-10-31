@@ -5,13 +5,14 @@ using namespace std;
 
 struct Item
 {
-    int idade;
-    string nome;
-    Item *proximo;
+    int idade; //variavel qualquer do tipo int
+    string nome; //variavel qualquer tipo string
+    Item *proximo; //ponteiro do tipo Item, para apontar para uma variavel do tipo item
 };
 
-Item *topo = NULL;
+Item *topo = NULL; //alocação dinamica de uma Pilha
 
+//cabeçalho das funções
 void empilhar();
 void desempilhar();
 bool verificarSeTemAlgumaCoisa();
@@ -57,6 +58,7 @@ void empilhar()
     topo = temp;
     temp = NULL;
 }
+
 void desempilhar()
 {
     if (verificarSeTemAlgumaCoisa())
