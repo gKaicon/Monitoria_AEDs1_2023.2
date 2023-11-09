@@ -1,5 +1,7 @@
-#include "header.h"
+#include "func.cpp"
 #include <iostream>
+
+using namespace std;
 
 int main() {
     double a = 10.0, b = 5.0;
@@ -8,10 +10,10 @@ int main() {
     double product = multiply(a, b);
     double quotient = divide(a, b);
 
-    std::cout << "Sum: " << sum << std::endl;
-    std::cout << "Difference: " << difference << std::endl;
-    std::cout << "Product: " << product << std::endl;
-    std::cout << "Quotient: " << quotient << std::endl;
+    cout << "Sum: " << sum << endl;
+    cout << "Difference: " << difference << endl;
+    cout << "Product: " << product << endl;
+    cout << "Quotient: " << quotient << endl;
 
     return 0;
 }
