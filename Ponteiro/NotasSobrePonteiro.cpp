@@ -26,9 +26,9 @@ int main()
 
     int *v, n, x; //declaração
     //atribuição
-    n = 3;
-    v = &n;
-    x = *v;
+    n = 3; // atribui que n, recebe o valor 3
+    v = &n; // o ponteiro v, recebe o endereço de memoria de n
+    x = *v; // atribui que x recebe o conteudo do que foi armazenado em v
     //impressão
     cout << "Endereço onde v foi criado: " << &v << endl;
     cout << "Conteudo de v: " << *v << endl;
