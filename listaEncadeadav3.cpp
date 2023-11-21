@@ -104,7 +104,7 @@ void removerPrimeira()
         cout << aux->nome << " " << aux->idade << endl
              << endl;
         L->primeiro->proximo = aux->proximo;
-        if (aux == L->ultimo)
+        if (aux == L->ultimo)//if usado para tratar caso a lista tenha 1 item
         {
             L->ultimo = L->primeiro;
         }

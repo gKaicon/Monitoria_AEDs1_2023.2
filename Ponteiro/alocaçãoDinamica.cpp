@@ -13,11 +13,14 @@ int main()
     UINT CPAGE_DEFAULT = GetConsoleOutputCP();
     SetConsoleOutputCP(CPAGE_UTF8);
     srand(time(NULL));
+
     //criação por alocação dinamica do vetor
     int *vet, tamanhoVet;
     cout << "Digite o tamanho do vetor: ";
     cin >> tamanhoVet;
     vet = new int[tamanhoVet];
+
+
     for (int i = 0; i < tamanhoVet; i++)
     {
         vet[i] = rand() % 9;
@@ -38,16 +41,16 @@ int main()
     // preenchimento da matriz
     for (int i = 0; i < linha; i++)
     {
-        for (int j = 0; j < linha; j++)
+        for (int j = 0; j < coluna; j++)
         {
             matriz[i][j] = rand() % 9;
         }
     }
-    // impressão da matriz
+    // impressão da matriz5
     cout << "\n";
     for (int i = 0; i < linha; i++)
     {
-        for (int j = 0; j < linha; j++)
+        for (int j = 0; j < coluna; j++)
         {
             cout << matriz[i][j] << "\t";
         }

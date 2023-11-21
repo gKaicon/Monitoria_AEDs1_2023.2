@@ -37,6 +37,7 @@ int main()
     cout << "Conteudo de n: " << n << endl;
     cout << "Conteudo de x: " << x << endl;
     cout << "Endereço de x: " << &x << endl;
+    cout << "*v multiplicado por um valor qualquer 0-10: " << (*v) * rand()%10 << endl;
 
     steady_clock::time_point tempofim = steady_clock::now();
     duration<double> tempo = duration_cast<duration<double>>(tempofim - tempoinicio);
