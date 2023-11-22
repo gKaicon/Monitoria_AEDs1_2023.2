@@ -54,6 +54,7 @@ void empilhar()
     cin >> temp->nome;
     cout << "Idade: ";
     cin >> temp->idade;
+
     temp->proximo = topo;
     topo = temp;
     temp = NULL;
@@ -74,6 +75,7 @@ void desempilhar()
         cout << "Nada!" << endl;
     }
 }
+
 bool verificarSeTemAlgumaCoisa()
 {
     if (topo != NULL)
