@@ -25,6 +25,8 @@ int main()
     srand(time(NULL));
 
     int *v, n, x; //declaração
+    v = new int;
+    cout << "Conteudo de v: " << *v << endl;
     //atribuição
     n = 3;
     v = &n;
