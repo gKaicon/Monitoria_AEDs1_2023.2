@@ -25,10 +25,12 @@ int main()
     srand(time(NULL));
 
     int *v, n, x; //declaração
+    v = new int;
+    cout << "Conteudo de v: " << *v << endl;
     //atribuição
-    n = 3; // atribui que n, recebe o valor 3
-    v = &n; // o ponteiro v, recebe o endereço de memoria de n
-    x = *v; // atribui que x recebe o conteudo do que foi armazenado em v
+    n = 3;
+    v = &n;
+    x = *v;
     //impressão
     cout << "Endereço onde v foi criado: " << &v << endl;
     cout << "Conteudo de v: " << *v << endl;
@@ -37,7 +39,6 @@ int main()
     cout << "Conteudo de n: " << n << endl;
     cout << "Conteudo de x: " << x << endl;
     cout << "Endereço de x: " << &x << endl;
-    cout << "*v multiplicado por um valor qualquer 0-10: " << (*v) * rand()%10 << endl;
 
     steady_clock::time_point tempofim = steady_clock::now();
     duration<double> tempo = duration_cast<duration<double>>(tempofim - tempoinicio);
